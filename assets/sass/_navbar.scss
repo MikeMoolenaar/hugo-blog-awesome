@@ -31,6 +31,9 @@
     user-select: none;
     -ms-user-select: none;
     -webkit-user-select: none;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
 
     ul {
       margin: 0;
@@ -41,6 +44,10 @@
       @include media-query($on-mobile) {
         display: none;
       }
+    }
+
+    > a#mode {
+      margin: .5rem 1rem 0 0;
     }
 
   
