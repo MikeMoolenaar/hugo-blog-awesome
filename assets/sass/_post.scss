@@ -163,6 +163,24 @@
   h6 {
     @include relative-font-size(0.875);
   }
+
+  // Anchors
+  a.hanchor {
+    visibility: hidden;
+    color: rgb(180, 180, 180);
+    font-size: 100%;
+    transition: 0.2s;
+    padding-left: 8px;
+    font-weight: 600;
+    
+    &:hover {
+      color: rgb(180, 180, 180);
+    }
+  }
+  h2:hover a, h3:hover a, h4:hover a {
+    visibility: visible;
+    text-decoration: none;
+  }
 }
 
 .post-nav {

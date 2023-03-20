@@ -190,7 +190,7 @@ h6 > a {
 }
 
 // Link
-a {
+a:not {
   color: inherit;
   text-decoration-color: $smoke;
 

@@ -28,7 +28,7 @@ body[data-theme="dark"] {
 
   // Post
   .page-content {
-    a {
+    a:not(.hanchor) {
       color: $dark-text-link-blue;
 
       &:hover,
