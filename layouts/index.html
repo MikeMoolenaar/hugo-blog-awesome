@@ -2,7 +2,6 @@
 <html lang="{{ .Site.LanguageCode }}">
     {{- partial "head.html" . -}}
     <body data-theme = "{{ .Site.Params.defaultColor }}" class="notransition">
-        {{- partial "scriptsBodyStart.html" . -}}
         {{- partial "header.html" . -}}
         <div class="wrapper">
             {{ partial "bio" . }}
@@ -21,6 +20,6 @@
             </main>
         </div>
         {{- partial "footer.html" . -}}
-        {{- partial "scriptsBodyEnd.html" . -}}
+        {{- partial "scripts.html" . -}}
     </body>
 </html>

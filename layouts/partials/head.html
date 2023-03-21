@@ -17,6 +17,11 @@
   {{- $code_syntax_highlight_css := resources.Get "code-highlight.css" | minify | fingerprint -}}
   <link href="{{ $code_syntax_highlight_css.RelPermalink }}" rel="stylesheet">
 
+  {{ if (findRE "<pre" .Content 1) }}
+    {{- $style_clipboard := resources.Get "sass/clipboard.scss" | toCSS | minify | fingerprint -}}
+    <link href="{{ $style_clipboard.RelPermalink }}" rel="stylesheet">
+  {{ end }}
+
   {{/*  Favicons  */}}
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">

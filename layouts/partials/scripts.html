@@ -1,0 +1,10 @@
+{{ $script_main := resources.Get "js/themeSwitchnMenu.js" | minify | fingerprint }}
+<script src="{{ $script_main.Permalink }}"></script>
+
+{{ $script_main := resources.Get "js/themeLoader.js" | minify | fingerprint }}
+<script src="{{ $script_main.Permalink }}"></script>
+
+{{ if (findRE "<pre" .Content 1) }}
+  {{ $script_clipboard := resources.Get "js/clipboard.js" | minify | fingerprint }}
+  <script src="{{ $script_clipboard.Permalink }}"></script>
+{{ end }}
