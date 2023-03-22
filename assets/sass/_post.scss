@@ -62,10 +62,10 @@
     }
   }
 
-  a {
+  a:not(.hanchor) {
     color: $text-link-blue;
-    text-decoration: none;
-    transition: all 0.2s ease-in-out;
+    text-decoration: underline;
+    transition: color 0.2s ease-in-out;
 
     // Add arrow sign if link has target _blank
     &[target="_blank"]::after {
@@ -79,7 +79,7 @@
 
     &:hover {
       color: $text-link-blue-active;
-      text-decoration: underline;
+      text-decoration: none;
     }
 
     &:focus {
@@ -170,20 +170,21 @@
 
   // Anchors
   a.hanchor {
-    visibility: hidden;
-    color: rgb(180, 180, 180);
-    font-size: 100%;
-    transition: 0.2s;
-    padding-left: 8px;
-    font-weight: 600;
+    cursor: pointer;
     
     &:hover {
-      color: rgb(180, 180, 180);
+      color: inherit;
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      
+      &:after {
+        content: "#";
+        display: inline-block;
+        margin-left: 8px;
+        color: rgb(150, 150, 150);
+        text-decoration: none !important;
+      }
     }
-  }
-  h2:hover a, h3:hover a, h4:hover a {
-    visibility: visible;
-    text-decoration: none;
   }
 }
 
