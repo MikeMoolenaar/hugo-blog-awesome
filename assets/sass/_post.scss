@@ -65,17 +65,21 @@
   a {
     color: $text-link-blue;
     text-decoration: none;
+    transition: all 0.2s ease-in-out;
+
+    // Add arrow sign if link has target _blank
     &[target="_blank"]::after {
       content: " \2197";
       font-size: $small-font-size;
       line-height: 0;
       position: relative;
-      bottom: 5px;
+      bottom: 3px;
       vertical-align: baseline;
     }
 
     &:hover {
       color: $text-link-blue-active;
+      text-decoration: underline;
     }
 
     &:focus {
