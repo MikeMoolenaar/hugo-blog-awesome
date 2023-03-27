@@ -1,8 +1,10 @@
+@import "mixins";
+
 .clipboard-container {
   position: absolute;
   right: 0;
   opacity: 1;
-  margin-right: 14px;
+  margin-right: 6px;
   margin-top: 24px;
   z-index: 1;
   transition: all 0.2s ease-in-out;
@@ -27,8 +29,10 @@
   }
 }
 
-.lntable {
-  position: relative;
+table.lntable {
+  @include media-query-up($on-desktop) {
+    display: block;
+  }
 
   &:hover .clipboard-container {
     opacity: 1;

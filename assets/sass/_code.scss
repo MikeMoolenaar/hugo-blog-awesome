@@ -23,12 +23,26 @@ p > code {
 }
 
 $border-radius: 20px;
-td:nth-child(1) pre {
-  border-radius: $border-radius 0 0 $border-radius;
+td:nth-child(1) {
+  @include media-query($on-mobile) {
+    display: none;
+  }
+
+  pre {
+    border-radius: $border-radius 0 0 $border-radius;
+  
+    @include media-query($on-mobile) {
+      display: none;
+    }
+  }
 }
 
 td:nth-child(2) pre {
   border-radius: 0 $border-radius $border-radius 0;
+
+  @include media-query($on-mobile) {
+    border-radius: 0;
+  }
 }
 
 // Codeblock Theme
@@ -37,26 +51,32 @@ pre {
   padding: .5rem 1rem;
   display: block;
   overflow-x: auto;
+  width: 85%;
 
   @include media-query($on-mobile) {
     margin: 0 calc(51% - 51vw);
+    width: auto;
   }
 
   // Configure scrollbars for code blocks
   &::-webkit-scrollbar {
     height: .5rem;
+    top:-100px;
+
   }
+
+
   // Set scrollbar background, track and thumb colors
   &::-webkit-scrollbar-track {
     background: #606071;
-    border-radius: .1rem;
+    border-radius: 10px;
   }
   &::-webkit-scrollbar-thumb {
     background: #999ea2;
-    border-radius: .3rem;
+    border-radius: 10px;
   }
   &::-webkit-scrollbar-thumb:hover {
-    background: #424546;
+    background: #858585;
   }
 
   > code {
