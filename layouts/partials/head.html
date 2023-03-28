@@ -3,7 +3,6 @@
   {{ hugo.Generator }}
 
   {{/*  <!-- Permalink & RSSlink -->  */}}
-
   <link rel="canonical" href="{{ .Permalink }}">
   {{- with .OutputFormats.Get "RSS" }}
   <link href="{{ .Permalink }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}">
@@ -11,7 +10,6 @@
   {{- end -}}
 
   {{/*  Styles  */}}
-
   {{- $style := resources.Get "sass/main.scss" | toCSS | minify | fingerprint -}}
   <link href="{{ $style.RelPermalink }}" rel="stylesheet">
   {{- $code_syntax_highlight_css := resources.Get "code-highlight.css" | minify | fingerprint -}}
@@ -23,7 +21,6 @@
   {{ end }}
 
   {{/*  Favicons  */}}
-
   <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">

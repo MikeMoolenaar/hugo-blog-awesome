@@ -10,6 +10,7 @@
                 </div>
             </header>
             <div class="page-content">
+                <!-- Make header elements clickable with an anchor -->
                 {{- with .Content -}}
                 {{ . | replaceRE "(<h[2-4] id=\"([^\"]+)\".*>)(.+)(</h[2-4]+>)" `${1}<a href="#${2}" class="hanchor" ariaLabel="Anchor">${3}</a>${4}`| safeHTML }}
                 {{- end -}}
